@@ -4,11 +4,13 @@ branches:
 gemfile:
   - gemfiles/activerecord_5_0.gemfile
   - gemfiles/activerecord_5_1.gemfile
+  - gemfiles/activerecord_6_1.gemfile
+  - gemfiles/activerecord_7_0.gemfile
 language: ruby
 matrix:
   allow_failures:
     - rvm: ruby-head
 rvm:
-  - 2.5.7
+  - 3.0.6
   - ruby-head
 script: bundle exec rspec

@@ -11,6 +11,9 @@ Bundler.require(:test)
 RSpec.configure do |c|
   c.before(:suite) do
     CreateSchema.suppress_messages{ CreateSchema.migrate(:up) }
+    ActiveRecord.yaml_column_permitted_classes += [
+      Time
+    ]
   end
 
   c.after(:suite) do
